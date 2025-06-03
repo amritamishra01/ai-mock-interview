@@ -2,7 +2,7 @@
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import PublicLayout from "@/layouts/PublicLayout";
 
-import HomePage from "@/routes/homePage";
+import HomePage from "@/routes/HomePage";
 import AuthLayout from "@/layouts/AuthLayout";
 import SignupPage from "./routes/SignupPage";
 import SigninPage from "./routes/SigninPage";
