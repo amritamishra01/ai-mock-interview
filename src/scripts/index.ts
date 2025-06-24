@@ -533,6 +533,7 @@ class ChatSession {
     if (!ai) {
       const { GoogleGenAI } = await import('@google/genai');
       const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      console.log('env:', import.meta.env);
 
       if (!apiKey) {
         throw new Error('GEMINI_API_KEY not set');
