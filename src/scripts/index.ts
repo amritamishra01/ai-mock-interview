@@ -428,35 +428,37 @@
 
 // chatSession.ts
 // import { GoogleGenAI } from '@google/genai';
-const { GoogleGenAI } = await import('@google/genai');
+// const { GoogleGenAI } = await import('@google/genai');
 
 
-// const apiKey = process.env.GEMINI_API_KEY;
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+// // const apiKey = process.env.GEMINI_API_KEY;
+// const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
 
 
-if (!apiKey) throw new Error('GEMINI_API_KEY not set');
+// if (!apiKey) throw new Error('GEMINI_API_KEY not set');
 
-const ai = new GoogleGenAI({ apiKey });
+// const ai = new GoogleGenAI({ apiKey });
 
-const model = 'gemini-2.5-flash';
+// const model = 'gemini-2.5-flash';
+
+
 
 // const generationConfig = {
 //   responseMimeType: 'text/plain',
 //   temperature: 0.7,
 //   safetySettings: [
 //     {
-//       category: 'HARM_CATEGORY_DEROGATORY' as any,
+//       category: 'HARM_CATEGORY_HATE_SPEECH' as any,
 //       threshold: 'BLOCK_LOW_AND_ABOVE' as any,
 //     },
 //     {
-//       category: 'HARM_CATEGORY_VIOLENCE' as any,
+//       category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT' as any,
+//       threshold: 'BLOCK_LOW_AND_ABOVE' as any,
+//     },
+//     {
+//       category: 'HARM_CATEGORY_DANGEROUS_CONTENT' as any,
 //       threshold: 'BLOCK_MEDIUM_AND_ABOVE' as any,
-//     },
-//     {
-//       category: 'HARM_CATEGORY_SEXUAL' as any,
-//       threshold: 'BLOCK_LOW_AND_ABOVE' as any,
 //     },
 //     {
 //       category: 'HARM_CATEGORY_HARASSMENT' as any,
@@ -465,6 +467,40 @@ const model = 'gemini-2.5-flash';
 //   ],
 // };
 
+
+
+
+// class ChatSession {
+//   history: any[] = [];
+
+//   async sendMessage(text: string) {
+//     this.history.push({
+//       role: 'user',
+//       parts: [{ text }],
+//     });
+
+//     const response = await ai.models.generateContentStream({
+//       model,
+//       config: {
+//         thinkingConfig: {
+//           thinkingBudget: -1,
+//         },
+//         ...generationConfig,
+//       },
+//       contents: this.history,
+//     });
+
+//     return response;
+//   }
+// }
+
+// export default new ChatSession();
+
+
+
+let ai: any = null;
+
+const model = 'gemini-2.5-flash';
 
 const generationConfig = {
   responseMimeType: 'text/plain',
@@ -489,19 +525,35 @@ const generationConfig = {
   ],
 };
 
-
-
-
 class ChatSession {
   history: any[] = [];
 
+  // 🛠 Load GoogleGenAI dynamically (no top-level await)
+  private async getAI() {
+    if (!ai) {
+      const { GoogleGenAI } = await import('@google/genai');
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+      if (!apiKey) {
+        throw new Error('GEMINI_API_KEY not set');
+      }
+
+      ai = new GoogleGenAI({ apiKey });
+    }
+
+    return ai;
+  }
+
+  // 🧠 Main interaction function
   async sendMessage(text: string) {
+    const aiClient = await this.getAI();
+
     this.history.push({
       role: 'user',
       parts: [{ text }],
     });
 
-    const response = await ai.models.generateContentStream({
+    const response = await aiClient.models.generateContentStream({
       model,
       config: {
         thinkingConfig: {
@@ -517,6 +569,3 @@ class ChatSession {
 }
 
 export default new ChatSession();
-
-
-
