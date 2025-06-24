@@ -22,12 +22,14 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-     "baseUrl": ".",
+
+    /* Path aliases + Vite support */
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+      "@/*": ["./src/*"]
+    },
+    "types": ["vite/client"] // 👈 Required for import.meta.url and HMR support
   },
   "include": ["src"]
 }
+
