@@ -1,5 +1,3 @@
-<img width="3158" height="1779" alt="image" src="https://github.com/user-attachments/assets/bd64e385-218a-433b-9f1c-e15d6d27044b" /># 🧠 AI Mock Interview
-
 This is a web-based AI-powered mock interview platform built to help users **prepare for technical interviews**. It simulates a real interview environment by asking relevant questions based on a selected job role and providing instant AI-generated feedback based on your spoken answers.
 
 > ⚠️ This platform is just for **practice purposes only**, to be used **before taking a real interview**. It offers a **quick demo of how interviews work**, gives you **instant feedback**, and most importantly, helps you **build confidence**.
