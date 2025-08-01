@@ -1,3 +1,5 @@
+ 🤖 AI Mock Interview App
+
 This is a web-based AI-powered mock interview platform built to help users **prepare for technical interviews**. It simulates a real interview environment by asking relevant questions based on a selected job role and providing instant AI-generated feedback based on your spoken answers.
 
 > ⚠️ This platform is just for **practice purposes only**, to be used **before taking a real interview**. It offers a **quick demo of how interviews work**, gives you **instant feedback**, and most importantly, helps you **build confidence**.
