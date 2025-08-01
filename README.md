@@ -33,7 +33,19 @@ This is a web-based AI-powered mock interview platform built to help users **pre
 ---
 
 ## 📸 Screenshots
+## 🔍 Demo Screenshots
 
+### 🧠 Login Screen
+![Login](https://raw.githubusercontent.com/amritamishra01/ai-mock-interview/main/Screenshot%202025-08-02%20010157.png)
+
+### 💼 Job Role Input
+![Job Input](https://raw.githubusercontent.com/amritamishra01/ai-mock-interview/main/Screenshot%202025-08-02%20010232.png)
+
+### 🧾 Role Card Creation
+![Role Card](https://raw.githubusercontent.com/amritamishra01/ai-mock-interview/main/Screenshot%202025-08-02%20010250.png)
+
+### 🎤 Interview + Feedback
+![Interview](https://raw.githubusercontent.com/amritamishra01/ai-mock-interview/main/Screenshot%202025-08-02%20010559.png)
 
 
 ---
