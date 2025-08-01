@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
+<img width="3158" height="1779" alt="image" src="https://github.com/user-attachments/assets/bd64e385-218a-433b-9f1c-e15d6d27044b" /># 🧠 AI Mock Interview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web-based AI-powered mock interview platform built to help users **prepare for technical interviews**. It simulates a real interview environment by asking relevant questions based on a selected job role and providing instant AI-generated feedback based on your spoken answers.
 
-Currently, two official plugins are available:
+> ⚠️ This platform is just for **practice purposes only**, to be used **before taking a real interview**. It offers a **quick demo of how interviews work**, gives you **instant feedback**, and most importantly, helps you **build confidence**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔐 **Authentication** – Login/signup with **Clerk Authentication**.
+- 🧾 **Job Role Selection** – Answer 2–5 questions to create a job role card (e.g., *Frontend Developer*).
+- 📋 **Dynamic Interview Questions** – Click on a role card to begin a mock interview.
+- 🗣️ **Speech-to-Text Input** – Speak your answers; your voice is converted to text.
+- 🎥 **Camera Activated** – Webcam turns on for realism (video is **not recorded or stored**).
+- 🤖 **AI Feedback** – Get **instant feedback** on your answers using **Gemini 1.5**.
+- ☁️ **Firebase Backend** – Used for real-time database and authentication storage (excluding webcam data).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌐 Live Demo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+[🔗 Visit the App on Vercel](https://ai-mock-interview-one-kappa.vercel.app)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js, Tailwind CSS
+- **Backend**: Firebase
+- **Authentication**: Clerk
+- **AI**: Gemini 1.5 API
+- **Deployment**: Vercel
+
+---
+
+## 📸 Screenshots
+
+
+
+---
+
+## 📌 Notes
+
+- This app is designed for **students, freshers, or professionals** who want to **practice interviews** in a safe environment.
+- Your webcam feed is **only used locally** for realism; no recording or saving is done.
+- It simulates a real-time interview feel but does **not replace a real technical evaluation**.
+
+---
+
+
+
